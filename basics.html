@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rxjs Playground (Basics)</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Basics</h1>
+      <a href="./index.html">Back To the Home</a>
+      <pre id="of">
+          <code class="language-javascript"></code>
+      </pre>
+      <button id="of-btn">Excute</button>
+      <div id="of-results"></div>
+      <div>
+        <h2>When to use <code>from</code> versus <code>of</code></h2>
+        <ul>
+          <li>
+            Use <code>from</code> when whatever you're working with is kind of like an observable
+             <ul>
+                 <li>Array</li>
+                 <li>Promises</li>
+                 <li>Object with a <code>scubscribe</code> method (a.k.a have a similar API)</li>
+             </ul>
+           </li>
+           <li>
+            Use <code>of</code> when it's nothing like an observable
+            <ul>
+              <li>String</li>
+              <li>Number</li>
+              <li>Object</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Two Ways of Listenings to Observables</h2>
+        If we only care about the next values, we can use <code>subscribe</code> method
+        <pre id="subscribe">
+          <code class="language-javascript">
+            example$.subscrib(value => console.log(value));
+          </code>
+        </pre>
+        If we want explicitly care about either the error or when the obeservable is complete, we can use <code>subscribe</code> method with three callbacks
+        <pre id="subscribe-with-callbacks">
+          <code class="language-javascript">
+            example$.subscrib({
+              next: value => console.log(value),
+              error: err => console.log(err),
+              complete: () => console.log('complete')
+            });
+          </code>
+        </pre>
+        How obeservables are completed, There's are a genrator under the hood, and when the generator is done, the observable is complete
+
+      </div>
+    </div>
+    <script type="module" src="./basics.js"></script>
+  </body>
+</html>
+
