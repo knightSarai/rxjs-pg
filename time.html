@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rxjs Playground (Basics)</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Intervals and Timers</h1>
+      <a href="./index.html">Back To the Home</a>
+      <p>One of the main ideas is seprating the idea of producing values from the idea of consuming values</p>
+      <p>
+        An Example of this would be 
+      <pre>
+        <code class="language-javascript">
+          import { interval } from 'rxjs';
+          const startingTime = Date.now();
+          const tick$ = interval(1000);
+          tick$.subscribe(() => console.log(Date.now() - startingTime));
+        </code>
+      </pre>
+      </p>
+      <h1>Counter</h1>
+      <section class="counter">
+        <div class="count">0</div>
+        <div class="controls">
+          <div class="control-set">
+            <button id="start">▶️ Start</button>
+            <button id="pause">⏸ Pause</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./time.js"></script>
+  </body>
+</html>
+

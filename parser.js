@@ -5,9 +5,7 @@ hljs.registerLanguage('javascript', javascript);
 
 export const parseDoc = () => {
     document.addEventListener('DOMContentLoaded', (event) => {
-        console.log('DOM fully loaded and parsed');
         document.querySelectorAll('pre code').forEach((el) => {
-            console.log(el);
           hljs.highlightElement(el);
         });
     });
