@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merging Time</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Merging Time</h1>
+    <p>Merge doesn't care about the order whatever emits first gets served first</p>
+    <p>On the other hand conact will take the streams on order, it's going to playthrough the first one, then playthrough the next one and so on</p>
+    <select name="merge-method" id="merge-method">
+      <option value="merge">Merge</option>
+      <option value="concat">Concat</option>
+      <option value="race">Race</option>
+      <option value="forkJoin">ForkJoin</option>
+    </select>
+    <main class="merging-timelines">
+      <section class="controls">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="clear">Clear</button>
+      </section>
+      <section id="status"></section>
+      <section class="columns">
+        <div id="first-output" class="column"></div>
+        <div id="second-output" class="column"></div>
+        <div id="combined-output" class="column"></div>
+      </section>
+    </main>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

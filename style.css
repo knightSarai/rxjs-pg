@@ -13,6 +13,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --teal: #2aa298;
+  --coral: #f76e6e;
+  --blue: #6fbef6;
+  --green: #08916a;
+  --fuschia: #d6438a;
 }
 
 a {
@@ -25,7 +30,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 2rem;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -37,7 +42,7 @@ h1 {
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
 }
 
@@ -84,6 +89,61 @@ div {
     margin-top: 1em;
 }
 
+.controls {
+  border: 2px dashed #fafafa;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+.columns {
+  display: flex;
+  height: 100%;
+  gap: 2em;
+}
+
+.column {
+  border: 1px solid #fafafa;
+  width: 100%;
+}
+
+
+.stream-element {
+  border: 1px solid black;
+  padding: 12px;
+  margin: 6px;
+  pre {
+    color: var(--fuschia);
+  }
+}
+
+.stream-first {
+  background-color: var(--coral);
+}
+
+.stream-second {
+  background-color: var(--blue);
+}
+
+.stream-combined {
+  background-color: var(--fuschia);
+}
+
+.stream-john {
+  background-color: var(--coral);
+}
+
+.stream-paul {
+  background-color: var(--blue);
+}
+
+.stream-george {
+  background-color: var(--fuschia);
+}
+
+.stream-ringo {
+  background-color: var(--green);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -96,4 +156,5 @@ div {
     background-color: #f9f9f9;
   }
 }
+
 
