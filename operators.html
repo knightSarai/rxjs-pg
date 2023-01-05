@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rxjs Playground (Basics)</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Operators</h1>
+      <a href="./index.html">Back To the Home</a>
+      <p>
+        <pre>
+          <code class="language-javascript">
+            export function* fibonacci() {
+              let valuse = [0, 1];
+              while (true) {
+                let [current, next] = valuse;
+
+                yield current;
+                values = [next, current + next];
+              }
+            }
+          </code>
+        </pre>
+        Instead of making this function goes on forever, We can use Rxjs to choose when we want to start and when we want to stop.
+        <p>
+          <code>take</code>
+          <pre>
+            <code class="language-javascript">
+              const example$ = from(fibonacci()).pipe(take(10));
+              example$.subscribe(console.log);
+            </code>
+          </pre>
+        </p>
+      </p>
+      <section class="counter">
+        <div class="count">0</div>
+        <div class="controls">
+          <div class="control-set">
+            <button id="start">▶️ Start</button>
+            <button id="pause">⏸ Pause</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./operators.js"></script>
+  </body>
+</html>
+
