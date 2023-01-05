@@ -1,24 +1,19 @@
 import { fromEvent, interval, merge, NEVER } from 'rxjs';
-import { scan, skipUntil, takeUntil, tap } from 'rxjs/operators';
+import { scan, map, skipUntil, takeUntil, tap, switchMap} from 'rxjs/operators';
 
 
 export const count = document.querySelector('.count');
 export const startButton = document.getElementById('start');
 export const pauseButton = document.getElementById('pause');
 
-const start$ = fromEvent(startButton, 'click');
-const pause$ = fromEvent(pauseButton, 'click');
-
 export const setCount = (value) => count.innerText = value;
 
+const start$ = fromEvent(startButton, 'click').pipe(map(() => true));
+const pause$ = fromEvent(pauseButton, 'click').pipe(map(() => false));
 
-let counter$ = interval(1000).pipe(
-  skipUntil(start$),
+const counter$ = merge(start$, pause$).pipe(
+  switchMap(isRunning => isRunning ? interval(1000) : NEVER),
   scan((total) => total + 1, 0),
-  takeUntil(pause$),
-);
+)
 
 counter$.subscribe(setCount);
-
-
-
