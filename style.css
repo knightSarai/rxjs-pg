@@ -106,6 +106,20 @@ div {
   width: 100%;
 }
 
+.form-field {
+  margin-bottom: 1em;
+}
+
+label,
+input {
+  width: 100%;
+  display: block;
+}
+
+label {
+  font-size: 0.8em;
+}
+
 
 .stream-element {
   border: 1px solid black;
