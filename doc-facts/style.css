@@ -1,0 +1,12 @@
+.controls {
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.dog-fact {
+  border: 1px solid var(--green);
+  margin: 1em;
+  padding: 1em;
+}
