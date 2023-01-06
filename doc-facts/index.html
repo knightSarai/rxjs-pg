@@ -11,6 +11,26 @@
     <block name="content">
       <h1>Dog Facts</h1>
       <a href="/">Back To the Home</a>
+      <ul>
+        <li>
+          mergeMap
+          <ul>
+            <li>We use mergeMap if we care about all observables emits where the order doesn't matter</li>
+          </ul>
+        </li>
+        <li>
+          switchMap
+          <ul>
+            <li>We use switchMap if we care only about the last observable emit</li>
+          </ul>
+        </li>
+        <li>
+          exhaustMap
+          <ul>
+            <li>We use exhaustMap if we need the first observable to be completed</li>
+          </ul>
+        </li>
+      </ul>
       <header>
         <div class="controls">
           <button id="get-dog-facts">Fetch Dog Facts</button>
