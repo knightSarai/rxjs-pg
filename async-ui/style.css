@@ -1,0 +1,33 @@
+#fetch-form {
+  width: 100%;
+  display: flex;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  width: 200px;
+}
+
+article {
+  color: var(--teal);
+}
+
+#pokemon {
+  padding: 1em;
+}
+
+.data {
+  display: flex;
+  border: 1px solid var(--blue);
+  padding: 1em;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}

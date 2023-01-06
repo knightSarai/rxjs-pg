@@ -17,8 +17,17 @@
           <a href="./merging-time/index.html">Merging Time</a>
           <a href="./mapping/index.html">Mapping</a>
           <a href="./doc-facts/index.html">Dog Facts</a>
+          <a href="./async-ui/index.html">Async UI</a>
       </div>
     </div>
+    <p>
+      This is an implementation of the pipe operator
+      <pre>
+        <code class="language-javascript">
+          const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x);
+        </code>
+      </pre>
+    </p>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
