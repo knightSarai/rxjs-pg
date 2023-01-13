@@ -14,7 +14,7 @@ import {
 
 const loading$ = fromEvent(form, 'submit').pipe(
   exhaustMap(() => {
-    const data$ = fetchData().pipe(shareReplay(1));
+    const data$ = fetchData().pipe(shareReplay());
 
     const showLoading$ = of(true).pipe(
       delay(+showLoadingAfterField.value),
