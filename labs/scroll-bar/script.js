@@ -1,6 +1,6 @@
-import { fromEvent } from 'rxjs';
+import { fromEvent, asyncScheduler } from 'rxjs';
 import {fromFetch} from 'rxjs/fetch';
-import {map, switchMap, tap} from 'rxjs/operators';
+import {map, switchMap, tap, throttleTime } from 'rxjs/operators';
 
 
 const url = "https://baconipsum.com/api/?type=all-meat&paras=15&start-with-lorem=1"
@@ -24,6 +24,7 @@ const calculateProgress = ({scrollTop, scrollHeight, clientHeight}) => {
 
 const scroll$ = fromEvent(document, 'scroll')
 const progress$ = scroll$.pipe(
+  throttleTime(30, asyncScheduler, {leading: false, trailing: true}),
   map(({target}) => calculateProgress(target.documentElement)),
   tap(progress => progressBar.style.width = `${progress}%`)
 )
